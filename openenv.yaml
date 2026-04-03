@@ -1,0 +1,31 @@
+name: code_review_env
+description: Agentic environment for automated code review and software quality evaluation
+version: 1.0
+
+tasks:
+  - name: easy
+    description: Detect basic formatting issues in code
+
+  - name: medium
+    description: Identify structural and readability issues
+
+  - name: hard
+    description: Detect security vulnerabilities and critical flaws
+
+observation_space:
+  type: object
+  properties:
+    code:
+      type: string
+
+action_space:
+  type: object
+  properties:
+    issues:
+      type: array
+      items:
+        type: string
+    quality_score:
+      type: number
+    suggestion:
+      type: string
